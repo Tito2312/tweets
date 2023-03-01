@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import { Home } from './components/pages/Home/Home';
+import { Tweets } from './components/pages/Tweets/Tweets';
+import { UseCustom } from './components/pages/UseCustom/UseCustom';
+import { UseEffect } from './components/pages/UseEffect/UseEffect';
+import { UseState } from './components/pages/UseState/UseState'
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/useState' element={<UseState/>}></Route>
+        <Route path='/Use2' element={<UseCustom/>}></Route>
+        <Route path='/UseEffect' element={<UseEffect/>}></Route>
+        <Route path='/Tweets' element={<Tweets/>}></Route>
+      </Routes>     
     </div>
   );
 }
